@@ -4,6 +4,9 @@ angular.module('ng.vigenere', [])
   .factory('$vigenere', [function() {
     var inst = {};
     inst.encrypt = function(key, value) {
+      if (!key || !value) {
+        return;
+      }
       value = value.toUpperCase();
       key = key.toUpperCase();
       var encrypted = '';
@@ -22,6 +25,9 @@ angular.module('ng.vigenere', [])
       return encrypted;
     };
     inst.decrypt = function(key, value) {
+      if (!key || !value) {
+        return;
+      }
       value = value.toUpperCase();
       key = key.toUpperCase();
       var decrypted = '';
