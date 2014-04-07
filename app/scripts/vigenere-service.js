@@ -5,6 +5,7 @@ angular.module('ng.vigenere', [])
     var inst = {};
     inst.encrypt = function(key, value) {
       value = value.toUpperCase();
+      key = key.toUpperCase();
       var encrypted = '';
       var escaped = 0;
       for (var i = 0; i<value.length; i++) {
