@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('vigenereJavascriptApp', [])
+angular.module('vigenereJavascriptApp', ['ngRoute'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
