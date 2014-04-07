@@ -27,23 +27,20 @@
 
     <!-- Add your site or application content here -->
     <div class="container" ng-controller="MainCtrl">
-        Clé de chiffrement: <span ng-bind="key"></span>
+        Clé de chiffrement: <input type="text" ng-model="key">
         <hr/>
 
         <form novalidate name="encryptForm" ng-submit="encrypt(clearText)">
             <input type="text" ng-model="clearText">
             <input type="submit" value="Chiffrer">
-            <div ng-cloak>
-                <span ng-bind="encryptedText"></span>
-            </div>
+            <span ng-bind="encryptedText"></span>
         </form>
         <hr/>
 
-        <form novalidate name="decryptForm" ng-submit="decrypt(clearText)">
+        <form novalidate name="decryptForm" ng-submit="decrypt(cryptedText)">
             <input type="text" ng-model="cryptedText">
             <input type="submit" value="Déchiffrer">
-            <div ng-cloak>
-                <span ng-bind="decryptedText"></span>
+            <span ng-bind="decryptedText"></span>
         </form>
     </div>
 
