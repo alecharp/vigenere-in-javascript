@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('vigenereJavascriptApp', []);
+angular.module('vigenereJavascriptApp', ['ng.vigenere']);
