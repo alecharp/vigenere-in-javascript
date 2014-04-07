@@ -10,7 +10,7 @@ describe('Vigenere Service', function() {
 
 	it('should describe encryption using vigenere', function() {
 		var clear = 'j\'adore ecouter la radio toute la journee';
-		expect(vigenere.encrypt('MUSIQUE', clear)).toBe('V\'UVWHY IOIMBUL PM LSLYI XAOLM BU NAOJVUY');
+		expect(vigenere.encrypt('MUSIQUE', clear)).toBe('v\'uvwhy ioimbul pm lslyi xaolm bu naojvuy');
 	});
 
 	it('should describe decryption using vigenere', function() {
