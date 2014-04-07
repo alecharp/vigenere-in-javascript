@@ -14,7 +14,7 @@ describe('Vigenere Service', function() {
 	});
 
 	it('should describe decryption using vigenere', function() {
-		var crypted = 'V\'UVWHY IOIMBUL PM LSLYI XAOLM BU NAOJVUY';
+		var crypted = 'v\'uvwhy ioimbul pm lslyi xaolm bu naojvuy';
 		expect(vigenere.decrypt('MUSIQUE', crypted)).toBe('j\'adore ecouter la radio toute la journee');
 	});
 
@@ -27,8 +27,8 @@ describe('Vigenere Service', function() {
 
 	it('should keep case while decryption', function() {
 		var clearText = 'NcgLzyd!? Xx PP tqbLg aee HkqfzQF';
-		expect(vigenere.encrypt('MOTCLE', clearText)).toBe('BonJour!? Je NE penSe pas TrouvER');
-		expect(vigenere.encrypt('motcle', clearText)).toBe('BonJour!? Je NE penSe pas TrouvER');
-		expect(vigenere.encrypt('MoTCLe', clearText)).toBe('BonJour!? Je NE penSe pas TrouvER');
+		expect(vigenere.decrypt('MOTCLE', clearText)).toBe('BonJour!? Je NE penSe pas TrouvER');
+		expect(vigenere.decrypt('motcle', clearText)).toBe('BonJour!? Je NE penSe pas TrouvER');
+		expect(vigenere.decrypt('MoTCLe', clearText)).toBe('BonJour!? Je NE penSe pas TrouvER');
 	});
 });
