@@ -24,33 +24,36 @@
       <script src="bower_components/es5-shim/es5-shim.js"></script>
       <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
+    <div class="container">
+        <div class="header" ng-controller="NavCtrl">
+            <ul class="nav nav-pills pull-right">
+                <li ng-class="{active: isActive('/index')}"><a href="#">Home</a></li>
+                <li ng-class="{active: isActive('/encode')}"><a ng-href="#/encode">Encode / Decode</a></li>
+            </ul>
+            <h3 class="text-muted">Vigenere Algorithm in Javascript</h3>
+        </div>
+    </div>
+
 
     <!-- Add your site or application content here -->
-    <div class="container" ng-controller="MainCtrl">
-        Clé de chiffrement: <input type="text" ng-model="key">
-        <hr/>
+    <div class="container" ng-view>
+    </div>
 
-        <form novalidate name="encryptForm" ng-submit="encrypt(clearText)">
-            <input type="text" ng-model="clearText">
-            <input type="submit" value="Chiffrer">
-            <span ng-bind="encryptedText"></span>
-        </form>
-        <hr/>
-
-        <form novalidate name="decryptForm" ng-submit="decrypt(cryptedText)">
-            <input type="text" ng-model="cryptedText">
-            <input type="submit" value="Déchiffrer">
-            <span ng-bind="decryptedText"></span>
-        </form>
+    <div class="container">
+        <div class="footer">
+          <p>♥ from the Yeoman team</p>
+        </div>
     </div>
 
     <!-- build:js({.tmp,app}) scripts/core.js -->
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/nav.js"></script>
         <script src="scripts/vigenere-service.js"></script>
         <!-- endbuild -->
 </body>

@@ -1,0 +1,20 @@
+<form role="form" novalidate name="encodingForm">
+    <div class="form-group has-feedback" ng-class="{'has-error': encodingForm.key.$error.required, 'has-success': !encodingForm.key.$error.required}">
+        <label for="key">Key</label>
+        <input type="text" class="form-control" required id="key" name="key" ng-model="key">
+        <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-ok': !encodingForm.key.$error.required, 'glyphicon-remove': encodingForm.key.$error.required}"></span>
+    </div>
+    <div class="form-group" ng-class="{'has-error': encodingForm.input.$error.required, 'has-success': !encodingForm.input.$error.required}">
+        <label for="input">Input</label>
+        <textarea class="form-control" rows="5" required id="input" name="input" ng-model="input"></textarea>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" ng-click="encrypt(input, key);input=''" ng-class="{disabled: encodingForm.$invalid}">Encode</button>
+        <button class="btn btn-default" ng-click="input=output;output=''"><i class="glyphicon glyphicon-resize-vertical"></i></button>
+        <button class="btn btn-primary" ng-click="decrypt(input, key);input=''" ng-class="{disabled: encodingForm.$invalid}">Decode</button>
+    </div>
+</form>
+
+<hr/>
+
+<textarea rows="5" class="form-control" disabled ng-model="output"></textarea>
