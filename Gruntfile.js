@@ -276,9 +276,7 @@ module.exports = function (grunt) {
           src: [
             '*.{ico,png,txt}',
             '.htaccess',
-            'bower_components/**/*',
-            'images/{,*/}*.{webp}',
-            'fonts/*'
+            'images/{,*/}*.{webp}'
           ]
         }, {
           expand: true,
@@ -294,6 +292,25 @@ module.exports = function (grunt) {
         cwd: '<%= yeoman.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
+      },
+      fonts: {
+        files: [{
+          expand: true,
+          flatten: true,
+          cwd: '<%= yeoman.app %>/bower_components',
+          dest: '<%= yeoman.dist %>/fonts',
+          src: [
+            'bootstrap-sass/vendor/assets/fonts/bootstrap/*'
+          ]
+        }, {
+          expand: true,
+          flatten: true,
+          cwd: '<%= yeoman.app %>/bower_components',
+          dest: '.tmp/fonts',
+          src: [
+            'bootstrap-sass/vendor/assets/fonts/bootstrap/*'
+          ]
+        }]
       }
     },
 
@@ -301,15 +318,18 @@ module.exports = function (grunt) {
     concurrent: {
       server: [
         'compass:server',
-        'copy:styles'
+        'copy:styles',
+        'copy:fonts'
       ],
       test: [
         'compass',
-        'copy:styles'
+        'copy:styles',
+        'copy:fonts'
       ],
       dist: [
         'compass:dist',
         'copy:styles',
+        'copy:fonts',
         'imagemin',
         'svgmin',
         'htmlmin'

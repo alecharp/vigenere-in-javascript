@@ -1,22 +1,105 @@
-@import 'sass-bootstrap/lib/_variables';
-@import 'sass-bootstrap/lib/_mixins';
+$icon-font-path : '/fonts/';
 
-@import 'sass-bootstrap/lib/_normalize';
+@import 'bootstrap-sass/vendor/assets/stylesheets/bootstrap/_variables';
+@import 'bootstrap-sass/vendor/assets/stylesheets/bootstrap/_mixins';
 
-@import 'sass-bootstrap/lib/_scaffolding';
-@import 'sass-bootstrap/lib/_type';
-@import 'sass-bootstrap/lib/_code';
-@import 'sass-bootstrap/lib/_grid';
-@import 'sass-bootstrap/lib/_forms';
-@import 'sass-bootstrap/lib/_buttons';
+@import 'bootstrap-sass/vendor/assets/stylesheets/bootstrap/_normalize';
 
-@import 'sass-bootstrap/lib/_component-animations';
-@import 'sass-bootstrap/lib/_button-groups';
-@import 'sass-bootstrap/lib/_input-groups';
-@import 'sass-bootstrap/lib/_labels';
-@import 'sass-bootstrap/lib/_jumbotron';
-@import 'sass-bootstrap/lib/_alerts';
-@import 'sass-bootstrap/lib/_wells';
+@import 'bootstrap-sass/vendor/assets/stylesheets/bootstrap/_scaffolding';
+@import 'bootstrap-sass/vendor/assets/stylesheets/bootstrap/_type';
+@import 'bootstrap-sass/vendor/assets/stylesheets/bootstrap/_code';
+@import 'bootstrap-sass/vendor/assets/stylesheets/bootstrap/_grid';
+@import 'bootstrap-sass/vendor/assets/stylesheets/bootstrap/_forms';
+@import 'bootstrap-sass/vendor/assets/stylesheets/bootstrap/_buttons';
 
-@import 'sass-bootstrap/lib/_utilities';
-@import 'sass-bootstrap/lib/_responsive-utilities';
+@import 'bootstrap-sass/vendor/assets/stylesheets/bootstrap/_component-animations';
+@import 'bootstrap-sass/vendor/assets/stylesheets/bootstrap/_glyphicons';
+@import 'bootstrap-sass/vendor/assets/stylesheets/bootstrap/_button-groups';
+@import 'bootstrap-sass/vendor/assets/stylesheets/bootstrap/_input-groups';
+@import 'bootstrap-sass/vendor/assets/stylesheets/bootstrap/_navs';
+@import 'bootstrap-sass/vendor/assets/stylesheets/bootstrap/_jumbotron';
+@import 'bootstrap-sass/vendor/assets/stylesheets/bootstrap/_alerts';
+@import 'bootstrap-sass/vendor/assets/stylesheets/bootstrap/_wells';
+
+@import 'bootstrap-sass/vendor/assets/stylesheets/bootstrap/_utilities';
+@import 'bootstrap-sass/vendor/assets/stylesheets/bootstrap/_responsive-utilities';
+
+/* Space out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
