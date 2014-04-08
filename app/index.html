@@ -25,27 +25,20 @@
       <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
+
     <!-- Add your site or application content here -->
-    <div class="container" ng-controller="MainCtrl">
-        Clé de chiffrement: <input type="text" ng-model="key">
-        <hr/>
+    <div class="container" ng-view>
+    </div>
 
-        <form novalidate name="encryptForm" ng-submit="encrypt(clearText)">
-            <input type="text" ng-model="clearText">
-            <input type="submit" value="Chiffrer">
-            <span ng-bind="encryptedText"></span>
-        </form>
-        <hr/>
-
-        <form novalidate name="decryptForm" ng-submit="decrypt(cryptedText)">
-            <input type="text" ng-model="cryptedText">
-            <input type="submit" value="Déchiffrer">
-            <span ng-bind="decryptedText"></span>
-        </form>
+    <div class="container">
+        <div class="footer">
+          <p>♥ from the Yeoman team</p>
+        </div>
     </div>
 
     <!-- build:js({.tmp,app}) scripts/core.js -->
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
